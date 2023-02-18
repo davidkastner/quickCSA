@@ -1,0 +1,16 @@
+name: quickcsa
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - black
+  - git
+  - python=3.8
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
+  - sphinx-autoapi
+  - sphinx_rtd_theme
+  - pip:
+    - https://github.com/revitron/revitron-sphinx-theme/archive/master.zip
