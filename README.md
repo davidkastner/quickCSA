@@ -9,7 +9,7 @@
 2. **Architecture**
     * Folder structure
     * User input
-3. ** Setup and install**
+3. **Setup and install**
 4. **Performing Analyses**
     * Step-by-step explanation
     * Example job
