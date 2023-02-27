@@ -29,7 +29,7 @@ The folder structure is divided into three main folders. 1) The `1_input` direct
 The user is expected to add three types of files to the `1_input` directory. 1) First, their holo PDB file, which can have any name as long as it has the extension PDB. The user should only add a single PDB file to this directory although the script will remind you of this if more than one is added. 2) Two files callded `apo_residues` and `holo_residues`. The should contain a single line with the residues that are included in the holo and apo strcutures. It should be of the form `1,2,3, etc.`. 3) The `charge_mull.xls` files from the TeraChem calculations. The xls file from the holo calculation should be given the name `holo_charge_mull.xls` and the xls file from the apo calculation should be given the name `apo_charge_mull.xls`.
 
 
-## Install
+## III. Install
 ### Setup developing environment
 Remember to update your GitHub [ssh keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 ```bash
