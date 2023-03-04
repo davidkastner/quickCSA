@@ -10,6 +10,7 @@
     * Folder structure
     * User input
 3. **Setup and install**
+    * Setup developing environment
 4. **Performing Analyses**
     * Step-by-step explanation
     * Example job
