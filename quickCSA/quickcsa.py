@@ -1,12 +1,11 @@
 """Performs charge shift analysis (CSA) form TeraChem output."""
 
-
 import os
 import sys
 import shutil
 
 
-def clean_dir():
+def clean_dir() -> str:
     """
     Searches the current directory for files, prints missing file alerts.
 
@@ -37,7 +36,7 @@ def clean_dir():
     return pdb_name
 
 
-def file_mover(file_system_exists, pdb_name):
+def file_mover(file_system_exists, pdb_name) -> None:
     """
     Check the current directory for the five required files and move them.
 
@@ -66,7 +65,7 @@ def file_mover(file_system_exists, pdb_name):
                 print("{} is not in your current directory".format(file))
 
 
-def get_mask_res(type):
+def get_mask_res(type) -> List[]:
     """
     Create a list of the residues that should belong to the holo/apo regions.
 
@@ -89,7 +88,7 @@ def get_mask_res(type):
     return mask_list
 
 
-def mask_maker(mask, pdb_name, type):
+def mask_maker(mask, pdb_name, type) -> None:
     """
     Create the apo and holo masks from the original PDB file.
 
@@ -131,7 +130,7 @@ def mask_maker(mask, pdb_name, type):
     open("./2_temp/{}_link_atoms".format(type), "w")  # TODO: add section
 
 
-def collect_charges(type):
+def collect_charges(type) -> None:
     """
     Collect the charges from the charge.xls file.
 
@@ -200,7 +199,7 @@ def collect_charges(type):
     link.close()
 
 
-def get_res_diff():
+def get_res_diff() -> List[]:
     """
     Calculate the charge difference for the apo and holo residue list files.
 
@@ -228,10 +227,11 @@ def get_res_diff():
     holo_residues_set = set(holo_residues)
     apo_residues_set = set(apo_residues)
     res_diff = list(holo_residues_set.difference(apo_residues_set))
+
     return res_diff
 
 
-def charge_diff():
+def charge_diff() -> None:
     """
     Calculate the difference in the charges for the apo and holo residue lists.
 
@@ -295,7 +295,7 @@ def charge_diff():
             )
 
 
-def quick_csa_intro():
+def quick_csa_intro() -> None:
     """
     Introduces the user to Quick CSA and provides information on how it is run.
     Contains information about the required files and the naming conventions.
@@ -315,7 +315,7 @@ def quick_csa_intro():
     print("   - Holo file should be called holo_cahrge.xls\n")
 
 
-def quick_csa():
+def quick_csa() -> None:
     """
     The central handler funtion for the Quick CSA program.
     This function is also provided as a module in the pyQM/MM package.
