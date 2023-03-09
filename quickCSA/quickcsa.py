@@ -15,6 +15,13 @@ def clean_dir() -> str:
     ----------
     pdb_name : str
         The name of the PDB that the user would like processed.
+
+    Returns
+    -------
+    pdb_name: str
+        The name of the PDB that the user would like processed.
+
+
     """
     # Asks the user for the name of the pdb that they would like to process
     pdb_name = input("What is the name of your pdb (e.g., 1OS7, 6EDH, etc.)? ")
@@ -76,7 +83,7 @@ def get_mask_res(type) -> List[]:
 
     Returns
     -------
-    mask_res_list : res_type_array
+    mask_list : List[]
         An array of all the residues that the user wants included in their mask.
     """
     try:
@@ -85,6 +92,7 @@ def get_mask_res(type) -> List[]:
     except SystemExit:
         print("File {}_list does not exist".format(type))
         sys.exit()
+
     return mask_list
 
 
@@ -123,9 +131,11 @@ def mask_maker(mask, pdb_name, type) -> None:
                 # We don't want to include the last line so we watch for END
                 if line[:3] == "END":
                     break
+
     # Print important statistics for the user
     print(f"Extracted {len(set(res_type_array))} residues")
     print("Your new file is named {}\n".format(new_pdb))
+    
     # Make temporary empty link files
     open("./2_temp/{}_link_atoms".format(type), "w")  # TODO: add section
 
